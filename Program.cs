@@ -2,17 +2,11 @@
 {
     string [] mass = new string [str];
     string inmass = "";
-    int i = 0;
-    while (inmass != "q")
+    for (int i =0; i < str; i++)
     {
-        Console.WriteLine("Введите элементы массива или q для завершения ввода");
+        Console.WriteLine("Введите элементы массива");
         inmass = Convert.ToString(Console.ReadLine());
-        if (inmass != "q")
-        {
-            mass[i] = inmass;
-            i++;
-        }
-        
+        mass[i] = inmass;
     } 
     return mass;
 }
@@ -28,12 +22,14 @@ void PrintStrLess3(string [] mass)
 {
     foreach(string e in mass)
     {
-        if (e.Length < 3)
+        if (e.Length < 4)
         {
             Console.Write($"{e} ,");
         }
     }
 }
-string [] mass = CreateMass(30);
+Console.WriteLine("Введите размер массива ");
+int len = int.Parse(Console.ReadLine()!);
+string [] mass = CreateMass(len);
 MassPrint(mass);
 PrintStrLess3(mass);
