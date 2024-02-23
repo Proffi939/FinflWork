@@ -5,7 +5,7 @@
     for (int i =0; i < str; i++)
     {
         Console.WriteLine("Введите элементы массива");
-        inmass = Convert.ToString(Console.ReadLine());
+        inmass = Convert.ToString(Console.ReadLine()!);
         mass[i] = inmass;
     } 
     return mass;
@@ -20,16 +20,24 @@ void MassPrint(string [] mass)
 }
 void PrintStrLess3(string [] mass)
 {
+    Console.WriteLine("Массив с элементами меньше или равно 3");
+    int count = 0;
     foreach(string e in mass)
     {
         if (e.Length < 4)
         {
-            Console.Write($"{e} ,");
+            Console.Write($"{e} ");
+            count++;
         }
     }
+    if (count == 0)
+    {
+        Console.WriteLine("Элементов нет");
+    } 
 }
 Console.WriteLine("Введите размер массива ");
 int len = int.Parse(Console.ReadLine()!);
 string [] mass = CreateMass(len);
 MassPrint(mass);
+Console.WriteLine();
 PrintStrLess3(mass);
