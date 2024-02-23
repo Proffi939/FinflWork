@@ -35,9 +35,11 @@ void PrintStrLess3(string [] mass)
         Console.WriteLine("Элементов нет");
     } 
 }
+Console.Clear();
 Console.WriteLine("Введите размер массива ");
 int len = int.Parse(Console.ReadLine()!);
 string [] mass = CreateMass(len);
+Console.WriteLine();
 MassPrint(mass);
 Console.WriteLine();
 PrintStrLess3(mass);
